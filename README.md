@@ -2,7 +2,7 @@
 
 2. Авторизоваться в контейнере: docker-compose exec centos bash --login
 
-3. Запустить скрипт Веб-окружения в папке /tmp/ командой ./bitrix-env.sh -p -H -F server1 -M 'root'
+3. Запустить скрипт Веб-окружения в папке /tmp/ командой ./bitrix-env.sh -s -p -H -F server1 -M 'root'
 
 4. Открыть сайт по адресу: http://localhost/ (папка www)
 

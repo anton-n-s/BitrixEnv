@@ -7,4 +7,5 @@
 4. Открыть сайт по адресу: http://localhost/ (папка www)
 
 Меню веб-окружения доступно по адресу: /root/menu.sh
+
 Контейнер пересобирается командой: docker-compose up -d --no-deps --build centos

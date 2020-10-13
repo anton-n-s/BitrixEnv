@@ -1,0 +1,16 @@
+version: '3.3'
+
+services:
+    centos:
+        build: centos7
+        ports:
+            - 22:22
+            - 80:80
+            - 3306:3306
+            - 9000:9000
+        volumes:
+            - ./www:/home/bitrix/www
+        dns:
+            - 8.8.8.8
+            - 8.8.4.4
+        privileged: true

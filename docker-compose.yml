@@ -11,20 +11,27 @@ services:
         volumes:
             - /sys/fs/cgroup:/sys/fs/cgroup:ro
             - ./www:/home/bitrix/www
+            - ./mysql:/var/lib/mysql
         dns:
             - 8.8.8.8
             - 8.8.4.4
         privileged: true
-    phpmyadmin:
-        image: phpmyadmin:5.0.2
-        links:
-            - centos:centos
-        environment:
-            PMA_HOST: localhost
-            MYSQL_DATABASE: bitrix
-            MYSQL_USER: bitrix
-            MYSQL_PASSWORD: bitrix
-            MYSQL_ROOT_PASSWORD: root
-        restart: always
-        ports:
-            - 8080:80
+        
+    #phpmyadmin:
+        #image: phpmyadmin:5.0.2
+        #links:
+            #- centos:centos
+        #environment:
+            #PMA_HOST: centos
+            #MYSQL_DATABASE: bitrix
+            #MYSQL_USER: bitrix
+            #MYSQL_PASSWORD: bitrix
+            #MYSQL_ROOT_PASSWORD: root
+        #restart: always
+        #ports:
+            #- 8080:80
+        #networks:
+            #- bitrix-network
+#networks:
+    #bitrix-network:
+        #driver: bridge

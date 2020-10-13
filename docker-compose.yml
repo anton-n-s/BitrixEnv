@@ -9,8 +9,22 @@ services:
             - 3306:3306
             - 9000:9000
         volumes:
+            - /sys/fs/cgroup:/sys/fs/cgroup:ro
             - ./www:/home/bitrix/www
         dns:
             - 8.8.8.8
             - 8.8.4.4
         privileged: true
+    phpmyadmin:
+        image: phpmyadmin:5.0.2
+        links:
+            - centos:centos
+        environment:
+            PMA_HOST: localhost
+            MYSQL_DATABASE: bitrix
+            MYSQL_USER: bitrix
+            MYSQL_PASSWORD: bitrix
+            MYSQL_ROOT_PASSWORD: root
+        restart: always
+        ports:
+            - 8080:80
